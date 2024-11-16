@@ -53,6 +53,27 @@ public class MetodosOrdenamiento {
         array[i] = rand.nextInt(1000);
     }
     return array;
-}
+    }
+
+    public static int BusquedaBinaria(int[] array, int size){
+        int izquierda = 0;
+        int derecha = array.length - 1;
+
+        while (izquierda <= derecha) {
+            int medio = izquierda + (derecha - izquierda) / 2;
+
+            
+            if (array[medio] == size) {
+                return medio;  
+            }
+            if (array[medio] < size) {
+                izquierda = medio + 1;
+            }
+            else {
+                derecha = medio - 1;
+            }
+        }
+        return -1;
+    }
     
 }

@@ -40,6 +40,16 @@ public class App {
             System.out.printf("Con %d valores el tiempo es de %.6f seg.%n", size, (endTime - startTime) / 1e9);
         }
 
+        System.out.println("\nMétodo Busqueda Binaria");
+        for (int size : sizes) {
+            int[] array = MetodosOrdenamiento.generateRandomArray(size);
+            int[] arrayCopy = Arrays.copyOf(array, array.length);
+            long startTime = System.nanoTime();
+            MetodosOrdenamiento.BusquedaBinaria(arrayCopy, size);
+            long endTime = System.nanoTime();
+            System.out.printf("Con %d valores el tiempo es de %.6f seg.%n", size, (endTime - startTime) / 1e9);
+        }
+
 
     }
 
